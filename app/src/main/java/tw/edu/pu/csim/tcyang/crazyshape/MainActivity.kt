@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        //
 
 
         imgNext.setOnLongClickListener(object : View.OnLongClickListener {
