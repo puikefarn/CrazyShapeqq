@@ -28,6 +28,7 @@ class GameActivity : AppCompatActivity() {
             3->txvMsg.text = "請畫出星形"
             4->txvMsg.text = "請畫出三角形"
         }
+        btnBack.isEnabled = false
 
 
 
@@ -93,7 +94,16 @@ class GameActivity : AppCompatActivity() {
             "triangle" -> {Result = "三角形"
                 FlagDraw=4}
         }
-        Result += ": " + String.format("%.1f%%", outputs[0].score * 100.0f)
+        //Result += ": " + String.format("%.1f%%", outputs[0].score * 100.0f)
+
+        Result = "您畫的是" + Result + "，"
+        if(FlagShape==FlagDraw){
+            Result += "恭喜順利過關哟！"
+            btnBack.isEnabled = true
+        }
+        else{
+            Result += "請再試試看喔！"
+        }
 
 
         // Releases model resources if no longer used.
